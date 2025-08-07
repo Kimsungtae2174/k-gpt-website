@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-GPT | AI Meme Coin Revolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* 모든 CSS는 기존과 동일 */
+    :root {
+      --glass-bg: rgba(255,255,255,0.18);
+      --glass-border: rgba(255,255,255,0.35);
+      --neon-blue: #3be7ff;
+      --neon-violet: #a259ff;
+      --neon-pink: #ff6fcb;
+      --dark-bg: #181c2b;
+      --accent: #00ffd0;
+      --shadow: 0 8px 32px rgba(50,50,100,0.18);
+    }
+    body {
+      background: linear-gradient(135deg, #181c2b 0%, #2b2250 100%);
+      color: #f3f6fa;
+      font-family: 'Noto Sans KR', 'Orbitron', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    /* 이하 CSS는 원본과 동일 */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(120deg, var(--neon-blue) 0%, var(--neon-violet) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: bgmove 8s linear infinite alternate;
+    }
+    @keyframes bgmove {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(30deg); }
+    }
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 4px 32px var(--neon-blue), 0 0 0 8px rgba(50,255,255,0.08);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: float 3s ease-in-out infinite alternate;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-16px); }
+    }
+    .hero-logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 16px var(--neon-pink));
+    }
+    .hero-title {
+      font-family: 'Orbitron', 'Noto Sans KR', sans-serif;
+      font-size: 2.8em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.3em;
+      margin-bottom: 24px;
+      color: #fff;
+      text-shadow: 0 2px 12px var(--neon-violet);
+    }
+    .cta-btn {
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+      color: #181c2b;
+      font-weight: bold;
+      font-size: 1.2em;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 32px;
+      box-shadow: 0 2px 16px var(--neon-blue);
+      cursor: pointer;
+      margin-top: 18px;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
+      animation: pulse 2s infinite alternate;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+      color: #fff;
+      transform: scale(1.05);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 16px var(--neon-blue); }
+      100% { box-shadow: 0 0 32px var(--neon-pink); }
+    }
+    main {
+      max-width: 1100px;
+      margin: -80px auto 0 auto;
+      padding: 0 16px 64px 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .glass-section {
+      background: var(--glass-bg);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      margin: 48px 0;
+      padding: 48px 32px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+      animation: fadein 1.2s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section-title {
+      font-family: 'Orbitron', 'Noto Sans KR', sans-serif;
+      font-size: 2em;
+      color: var(--neon-blue);
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px var(--neon-violet);
+    }
+    .section-desc {
+      font-size: 1.15em;
+      color: #e0e6f7;
+      margin-bottom: 24px;
+    }
+    /* 토큰 정보 */
+    .token-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+    .token-card {
+      background: rgba(30,40,60,0.7);
+      border-radius: 18px;
+      padding: 28px 20px;
+      box-shadow: 0 2px 16px var(--neon-blue);
+      color: #fff;
+      text-align: center;
+      border: 1.5px solid var(--neon-blue);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .token-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px var(--neon-pink);
+    }
+    .token-addr {
+      font-family: 'Orbitron', monospace;
+      font-size: 1em;
+      background: #23263a;
+      color: var(--neon-blue);
+      padding: 6px 12px;
+      border-radius: 8px;
+      margin: 8px 0 0 0;
+      word-break: break-all;
+      display: inline-block;
+    }
+    .tokenomics-bar {
+      width: 100%;
+      height: 22px;
+      background: #23263a;
+      border-radius: 12px;
+      margin: 18px 0 8px 0;
+      overflow: hidden;
+      display: flex;
+      box-shadow: 0 1px 8px var(--neon-blue);
+    }
+    .bar-community {
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+      width: 80%; height: 100%;
+      border-radius: 12px 0 0 12px;
+      display: flex; align-items: center; justify-content: flex-end;
+      color: #fff; font-weight: bold; padding-right: 10px;
+      font-size: 1em;
+    }
+    .bar-team {
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-violet));
+      width: 20%; height: 100%;
+      border-radius: 0 12px 12px 0;
+      display: flex; align-items: center; justify-content: flex-start;
+      color: #fff; font-weight: bold; padding-left: 10px;
+      font-size: 1em;
+    }
+    .token-features {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .feature-chip {
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+      color: #181c2b;
+      font-weight: bold;
+      border-radius: 18px;
+      padding: 8px 20px;
+      font-size: 1em;
+      margin: 4px 0;
+      box-shadow: 0 1px 8px var(--neon-blue);
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      user-select: none;
+    }
+    .feature-chip:hover {
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+      color: #fff;
+    }
+    /* 기술/생태계 */
+    .tech-stack {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .tech-card {
+      background: rgba(30,40,60,0.7);
+      border-radius: 16px;
+      padding: 24px 18px;
+      min-width: 180px;
+      text-align: center;
+      border: 1.5px solid var(--neon-violet);
+      color: #fff;
+      box-shadow: 0 2px 12px var(--neon-violet);
+      margin-bottom: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tech-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 32px var(--neon-blue);
+    }
+    .tech-icon {
+      font-size: 2.2em;
+      margin-bottom: 8px;
+      color: var(--neon-blue);
+      filter: drop-shadow(0 0 8px var(--neon-pink));
+    }
+    /* 로드맵 */
+    .roadmap-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .roadmap-phase {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: rgba(30,40,60,0.7);
+      border-radius: 16px;
+      padding: 24px 18px;
+      border-left: 6px solid var(--neon-blue);
+      box-shadow: 0 2px 12px var(--neon-blue);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .roadmap-phase.active {
+      border-left: 6px solid var(--neon-pink);
+      box-shadow: 0 4px 24px var(--neon-pink);
+    }
+    .phase-marker {
+      font-size: 2em;
+      color: var(--neon-blue);
+      margin-right: 8px;
+      filter: drop-shadow(0 0 8px var(--neon-pink));
+    }
+    .roadmap-phase.active .phase-marker {
+      color: var(--neon-pink);
+    }
+    .phase-title {
+      font-family: 'Orbitron', 'Noto Sans KR', sans-serif;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: var(--neon-blue);
+      margin-bottom: 4px;
+    }
+    .roadmap-phase.active .phase-title {
+      color: var(--neon-pink);
+    }
+    .phase-desc {
+      color: #e0e6f7;
+      font-size: 1em;
+    }
+    /* 커뮤니티 */
+    .community-channels {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 18px;
+    }
+    .channel-card {
+      background: rgba(30,40,60,0.7);
+      border-radius: 14px;
+      padding: 18px 16px;
+      min-width: 160px;
+      text-align: center;
+      border: 1.5px solid var(--neon-blue);
+      color: #fff;
+      box-shadow: 0 2px 8px var(--neon-blue);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+    .channel-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px var(--neon-pink);
+      border-color: var(--neon-pink);
+      color: #fff;
+    }
+    .channel-icon {
+      font-size: 2em;
+      margin-bottom: 6px;
+      color: var(--neon-blue);
+    }
+    /* FAQ */
+    .faq-list {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: rgba(30,40,60,0.7);
+      border-radius: 12px;
+      border: 1.5px solid var(--neon-violet);
+      box-shadow: 0 2px 8px var(--neon-violet);
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .faq-q {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--neon-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--neon-violet);
+    }
+    .faq-a {
+      padding: 16px 20px;
+      color: #e0e6f7;
+      display: none;
+      font-size: 1em;
+      background: rgba(255,255,255,0.02);
+    }
+    .faq-item.open .faq-a {
+      display: block;
+      animation: fadein 0.5s;
+    }
+    /* Disclaimer */
+    .disclaimer {
+      background: rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 24px 18px;
+      color: #ffb700;
+      border: 1.5px solid #ffb700;
+      margin-top: 32px;
+      font-size: 1em;
+      box-shadow: 0 2px 8px #ffb70033;
+    }
+    /* 반응형 */
+    @media (max-width: 900px) {
+      main { padding: 0 4px; }
+      .glass-section { padding: 32px 8px; }
+      .token-info-grid { grid-template-columns: 1fr; gap: 18px; }
+      .tech-stack { flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 600px) {
+      .hero-title { font-size: 1.5em; }
+      .glass-section { padding: 18px 2px; }
+      .section-title { font-size: 1.2em; }
+      .token-card, .tech-card, .roadmap-phase, .channel-card, .faq-q, .faq-a { font-size: 0.98em; }
+    }
+	
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-logo">
+      <img src="K-GPT.png" alt="K-GPT Logo">
+    </div>
+    <div class="hero-title">K-GPT<br><span style="font-size:0.7em;">AI Meme Coin Revolution</span></div>
+    <div class="hero-desc">The fusion of AI and blockchain—everyone becomes a protagonist in the next-generation meme coin!<br>Join the next-gen community. 🚀🤖</div>
+    <a href="#token" class="cta-btn">View Token Info</a>
+<!--    <a href="whitepaper_styled_en.pdf" class="cta-btn" download style="margin-top:10px;">Download Whitepaper (EN)</a> -->
+  </section>
+  <main>
+    <section class="glass-section" id="about">
+      <div class="section-title">Project Introduction</div>
+      <div class="section-desc">K-GPT is a Solana-based meme coin combining AI and collective community intelligence. Anyone can participate easily, operated transparently, and changing the world with the power of memes.<br><br><b>Innovation, Fun, and a Coin for Everyone!</b></div>
+    </section>
+    <section class="glass-section" id="token">
+      <div class="section-title">Token Info & Distribution</div>
+      <div class="token-info-grid">
+        <div class="token-card">
+          <div style="font-size:2em;">🪙</div>
+          <div style="font-size:1.1em;">Total Supply</div>
+          <div style="font-size:1.5em;font-weight:bold;">100,000,000 K-GPT</div>
+          <div class="token-addr">Ce7sKw6B3X2o5YTbyjAhuMmbazS1qpXtbYpVEU2RDaYf</div>
+          <div style="margin-top:10px;">Solana | SPL | Decimals: 4</div>
+        </div>
+        <div class="token-card">
+          <div style="font-size:2em;">📊</div>
+          <div style="font-size:1.1em;">Distribution</div>
+          <div class="tokenomics-bar">
+            <div class="bar-community">80%<span style="margin-left:6px;">Community</span></div>
+            <div class="bar-team">20%<span style="margin-left:6px;">Team</span></div>
+          </div>
+          <div style="margin-top:10px;">Community/Marketing/Events: <b>80,000,000</b><br>Team/Founders: <b>20,000,000</b></div>
+        </div>
+      </div>
+      <div class="token-features">
+        <div class="feature-chip">🚫 No Transaction Fees</div>
+        <div class="feature-chip">🤝 Community Governance</div>
+        <div class="feature-chip">🔥 LP Burn</div>
+        <div class="feature-chip">🦾 Fully Decentralized</div>
+      </div>
+    </section>
+    <section class="glass-section" id="tech">
+      <div class="section-title">Technology & Ecosystem</div>
+      <div class="section-desc">Powered by Solana's ultra-fast, low-cost transactions and SPL token standard, fully integrated with DEXs like Raydium and Orca! Expanding into AI, NFT, and community services for a future-ready ecosystem.</div>
+      <div class="tech-stack">
+        <div class="tech-card">
+          <div class="tech-icon">⚡</div>
+          <div>Solana Blockchain</div>
+          <div style="font-size:0.95em;">65,000 TPS</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">🪙</div>
+          <div>SPL Token</div>
+          <div style="font-size:0.95em;">Solana Native Standard</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">🔄</div>
+          <div>DEX Integration</div>
+          <div style="font-size:0.95em;">Raydium, Orca, Jupiter</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon">🤖</div>
+          <div>AI & NFT Integration</div>
+          <div style="font-size:0.95em;">Expanding Community Services</div>
+        </div>
+      </div>
+    </section>
+    <section class="glass-section" id="roadmap">
+      <div class="section-title">Roadmap</div>
+      <div class="roadmap-timeline">
+        <div class="roadmap-phase">
+          <div class="phase-marker">🚀</div>
+          <div>
+            <div class="phase-title">Phase 1: Meme & Launch</div>
+            <div class="phase-desc">Token launch, meme campaign, DEX listing</div>
+          </div>
+        </div>
+        <div class="roadmap-phase active">
+          <div class="phase-marker">🌐</div>
+          <div>
+            <div class="phase-title">Phase 2: Vibe & HODL</div>
+            <div class="phase-desc">Community events, NFT integration, partnerships</div>
+          </div>
+        </div>
+        <div class="roadmap-phase">
+          <div class="phase-marker">🏆</div>
+          <div>
+            <div class="phase-title">Phase 3: Meme Takeover</div>
+            <div class="phase-desc">Ecosystem expansion, real services, global marketing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="glass-section" id="community">
+      <div class="section-title">Community & Channels</div>
+      <div class="section-desc">Everyone is a protagonist in K-GPT! Connect and participate in official channels and community events.</div>
+      <div class="community-channels">
+        <a href="https://k-gpt.it.kr" target="_blank" class="channel-card">
+          <div class="channel-icon">🌐</div>
+          <div>Official Website</div>
+        </a>
+<!--        <a href="https://twitter.com/KGPT_Official" target="_blank" class="channel-card"> -->
+        <a href="#" class="channel-card" onclick="return false;">
+          <div class="channel-icon">🐦</div>
+          <div>Twitter</div>
+        </a>
+<!--        <a href="https://discord.gg/kgpt" target="_blank" class="channel-card"> -->
+        <a href="#" class="channel-card" onclick="return false;">
+          <div class="channel-icon">💬</div>
+          <div>Discord</div>
+        </a>
+<!--        <a href="https://t.me/kgpt_community" target="_blank" class="channel-card"> -->
+        <a href="#" class="channel-card" onclick="return false;">  
+          <div class="channel-icon">📱</div>
+          <div>Telegram</div>
+        </a>
+      </div>
+    </section>
+    <section class="glass-section" id="faq">
+      <div class="section-title">FAQ</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">❓ What is K-GPT?</div>
+          <div class="faq-a">A Solana-based meme coin created by AI and the community. Everyone is a protagonist!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">💱 Where can I trade?</div>
+          <div class="faq-a">Available on DEXs like Raydium, Orca, Jupiter and various exchanges!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">💰 Are there any fees/taxes?</div>
+          <div class="faq-a">No transaction fees or taxes! Fully decentralized and transparent operation!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">⚠️ Risks?</div>
+          <div class="faq-a">Meme coins are highly volatile and not financial advice. Focused on fun and community!</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">🤝 How to join the community?</div>
+          <div class="faq-a">Join freely via Discord, Twitter, or the official website!</div>
+        </div>
+      </div>
+    </section>
+    <section class="disclaimer">
+      <b>Disclaimer</b><br>
+      K-GPT is a fully decentralized, community-driven project with no central ownership or operator.<br>
+      This website and project do not provide investment recommendations or financial advice. All decisions are your own responsibility and must comply with relevant laws.<br>
+      Cryptocurrency is highly volatile and future value or returns are not guaranteed.
+    </section>
+  </main>
+  <div style="width:100%;display:flex;justify-content:center;margin:40px 0 24px 0;">
+    <a href="whitepaper_styled_en.pdf" class="cta-btn" download style="font-size:1.1em;">Download Whitepaper (EN)</a>
+  </div>
+  <script>
+    // FAQ accordion interaction
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', function() {
+        const item = this.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>

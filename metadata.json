@@ -1,0 +1,38 @@
+{
+  "name": "K-GPT",
+  "symbol": "K-GPT",
+  "description": "K-GPT is an AI-powered meme coin on Solana blockchain, combining artificial intelligence with community-driven innovation for the future of decentralized finance.",
+  "image": "https://k-gpt.it.kr/5nWHCcq8TH9QATAk6ZJdjFDGVQXdp62ABiy4Dp93r3K6.png",
+  "external_url": "https://k-gpt.it.kr",
+  "attributes": [
+    {
+      "trait_type": "Blockchain",
+      "value": "Solana"
+    },
+    {
+      "trait_type": "Token Standard",
+      "value": "SPL"
+    },
+    {
+      "trait_type": "Decimals",
+      "value": 4
+    },
+    {
+      "trait_type": "Total Supply",
+      "value": "100,000,000"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Meme Coin"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://k-gpt.it.kr/5nWHCcq8TH9QATAk6ZJdjFDGVQXdp62ABiy4Dp93r3K6.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}
