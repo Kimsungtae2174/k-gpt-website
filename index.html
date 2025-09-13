@@ -14,7 +14,7 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="K-GPT | AI Meme Coin Revolution on Solana">
   <meta property="og:description" content="K-GPT is an AI-powered meme coin on Solana blockchain, combining artificial intelligence with community-driven innovation.">
-  <meta property="og:image" content="https://k-gpt.it.kr/5nWHCcq8TH9QATAk6ZJdjFDGVQXdp62ABiy4Dp93r3K6.png">
+  <meta property="og:image" content="https://k-gpt.it.kr/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump.png">
   <meta property="og:url" content="https://k-gpt.it.kr">
   <meta property="og:type" content="website">
   
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="K-GPT | AI Meme Coin Revolution">
   <meta name="twitter:description" content="AI-powered meme coin on Solana blockchain">
-  <meta name="twitter:image" content="https://k-gpt.it.kr/5nWHCcq8TH9QATAk6ZJdjFDGVQXdp62ABiy4Dp93r3K6.png">
+  <meta name="twitter:image" content="https://k-gpt.it.kr/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump.png">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://k-gpt.it.kr">
@@ -59,6 +59,153 @@
       --gray-700: #374151;
       --gray-800: #1f2937;
       --gray-900: #111827;
+    }
+    
+    /* New Token Banner Styles */
+    .new-token-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1001;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite;
+      padding: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .banner-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    
+    .banner-icon {
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+    
+    .banner-text {
+      flex: 1;
+      color: white;
+      text-align: center;
+    }
+    
+    .banner-title {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 0.2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .banner-subtitle {
+      display: block;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    .banner-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .banner-btn {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: 600;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .banner-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .banner-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .banner-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Adjust navbar positioning when banner is visible */
+    .navbar {
+      top: 80px;
+    }
+    
+    .hero {
+      padding-top: 200px;
+    }
+    
+    @media (max-width: 768px) {
+      .banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+      
+      .banner-text {
+        order: 1;
+      }
+      
+      .banner-actions {
+        order: 2;
+        justify-content: center;
+      }
+      
+      .banner-icon {
+        order: 0;
+        font-size: 1.5rem;
+      }
+      
+      .banner-title {
+        font-size: 1rem;
+      }
+      
+      .banner-subtitle {
+        font-size: 0.8rem;
+      }
+      
+      .navbar {
+        top: 120px;
+      }
+      
+      .hero {
+        padding-top: 240px;
+      }
     }
     
     body {
@@ -252,6 +399,251 @@
     @keyframes float {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-20px) rotate(10deg); }
+    }
+    
+    /* New Meme Token Section Styles */
+    .new-meme-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #1a1b23 0%, #2d1b69 50%, #1a1b23 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .new-meme-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(139,92,246,0.1)"/></svg>') repeat;
+      opacity: 0.3;
+    }
+    
+    .new-token-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .new-token-info {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    .new-token-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .new-token-icon {
+      font-size: 3rem;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .new-token-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    
+    .new-token-status {
+      color: #ff4757;
+      font-weight: 600;
+      font-size: 0.9rem;
+      animation: blink 1.5s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0.5; }
+    }
+    
+    .new-token-address {
+      margin-bottom: 2rem;
+    }
+    
+    .new-token-address label {
+      display: block;
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .address-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+    
+    .address-container code {
+      flex: 1;
+      font-family: 'Space Mono', monospace;
+      color: var(--purple);
+      font-size: 0.9rem;
+      word-break: break-all;
+    }
+    
+    .copy-btn-small {
+      background: var(--purple);
+      border: none;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .copy-btn-small:hover {
+      background: var(--pink);
+      transform: scale(1.1);
+    }
+    
+    .new-token-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem;
+      background: rgba(139, 92, 246, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+    
+    .stat-label {
+      color: var(--gray-400);
+      font-size: 0.85rem;
+    }
+    
+    .stat-value {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    
+    .new-token-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    
+    .token-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 10px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      background: rgba(139, 92, 246, 0.1);
+    }
+    
+    .token-link:hover {
+      border-color: var(--purple);
+      background: rgba(139, 92, 246, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .token-link.primary {
+      background: var(--purple);
+      border-color: var(--purple);
+    }
+    
+    .token-link.primary:hover {
+      background: var(--pink);
+      border-color: var(--pink);
+    }
+    
+    .new-token-features {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    .new-token-features h4 {
+      color: var(--white);
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .feature-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    
+    .feature-list li {
+      padding: 0.5rem 0;
+      color: var(--gray-300);
+      font-size: 0.9rem;
+    }
+    
+    .warning-box {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    
+    .warning-icon {
+      font-size: 1.2rem;
+      color: #ff6b6b;
+    }
+    
+    .warning-text {
+      color: var(--gray-300);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    
+    .warning-text strong {
+      color: #ff6b6b;
+    }
+    
+    @media (max-width: 768px) {
+      .new-token-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .new-token-links {
+        grid-template-columns: 1fr;
+      }
+      
+      .new-token-stats {
+        grid-template-columns: 1fr;
+      }
     }
     
     /* How to Buy Section */
@@ -669,6 +1061,23 @@
     </div>
   </nav>
 
+  <!-- NEW MEME TOKEN ANNOUNCEMENT BANNER -->
+  <div class="new-token-banner">
+    <div class="banner-content">
+      <div class="banner-icon">🚀</div>
+      <div class="banner-text">
+        <span class="banner-title">🎉 NEW MEME TOKEN LAUNCHED!</span>
+        <span class="banner-subtitle">Fresh meme coin just dropped on Pump.fun - Join the party!</span>
+      </div>
+      <div class="banner-actions">
+        <a href="https://pump.fun/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="banner-btn">
+          🚀 Trade Now
+        </a>
+        <button class="banner-close" onclick="closeBanner()">✕</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="floating-icon">🚀</div>
@@ -686,6 +1095,91 @@
       <div class="hero-buttons">
         <a href="#buy" class="btn-primary">🚀 Buy K-GPT Now</a>
         <a href="whitepaper_styled_en.pdf" class="btn-secondary" download>📄 Whitepaper</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Meme Token Section -->
+  <section class="new-meme-section" id="new-meme-token">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">🚀 New Launch</span>
+        <h2>Meme Token Project Launch</h2>
+        <p>Introducing the new meme token project launched by the K-GPT team</p>
+      </div>
+      
+      <div class="new-token-grid">
+        <div class="new-token-info">
+          <div class="new-token-header">
+            <div class="new-token-icon">🔥</div>
+            <div>
+              <div class="new-token-title">NEW MEME TOKEN</div>
+              <div class="new-token-status">🟢 LIVE ON PUMP.FUN</div>
+            </div>
+          </div>
+          
+          <div class="new-token-address">
+            <label>Token Address:</label>
+            <div class="address-container">
+              <code id="newTokenAddress">Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump</code>
+              <button class="copy-btn-small" onclick="copyNewTokenAddress()">📋</button>
+            </div>
+          </div>
+          
+          <div class="new-token-stats">
+            <div class="stat-item">
+              <span class="stat-label">Platform</span>
+              <span class="stat-value">Pump.fun</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Network</span>
+              <span class="stat-value">Solana</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Status</span>
+              <span class="stat-value">Live</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Launch Date</span>
+              <span class="stat-value">2025.01.27</span>
+            </div>
+          </div>
+          
+          <div class="new-token-links">
+            <a href="https://pump.fun/coin/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="token-link primary">
+              💰 Trade on Pump.fun
+            </a>
+            <a href="https://solscan.io/token/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="token-link">
+              🔍 View on Solscan
+            </a>
+            <a href="https://dexscreener.com/solana/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="token-link">
+              📊 DexScreener
+            </a>
+            <a href="meme_token_website.html" target="_blank" class="token-link">
+              🌐 Token Website
+            </a>
+          </div>
+        </div>
+        
+        <div class="new-token-features">
+          <h4>🎯 Key Features</h4>
+          <ul class="feature-list">
+            <li>🚀 Launched on Pump.fun platform</li>
+            <li>💎 Community-driven meme coin</li>
+            <li>🔥 Integrated with K-GPT ecosystem</li>
+            <li>📈 High growth potential</li>
+            <li>⚡ Fast transaction execution</li>
+            <li>🌟 Early investment opportunity</li>
+          </ul>
+          
+          <div class="warning-box">
+            <div class="warning-icon">⚠️</div>
+            <div class="warning-text">
+              <strong>Investment Warning:</strong><br>
+              Cryptocurrency investments carry high risks. Please conduct thorough research before investing and only invest what you can afford to lose.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -751,7 +1245,7 @@
             Welcome to the revolution!
           </p>
           <div class="step-links">
-            <a href="https://jup.ag/swap/SOL-5nWHCcq8TH9QATAk6ZJdjFDGVQXdp62ABiy4Dp93r3K6" target="_blank" class="step-link">Swap Now</a>
+            <a href="https://jup.ag/swap/SOL-Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="step-link">Swap Now</a>
           </div>
         </div>
       </div>
@@ -760,13 +1254,95 @@
       <div class="contract-section">
         <h3 class="contract-title">📋 Contract Address</h3>
         <div class="contract-address" id="contractAddress">
-          5nWHCcq8TH9QATAk6ZJdjFDGVQXdp62ABiy4Dp93r3K6
+          Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump
         </div>
         <div>
           <button class="copy-btn" onclick="copyAddress()">📋 Copy Address</button>
-          <a href="https://jup.ag/swap/SOL-5nWHCcq8TH9QATAk6ZJdjFDGVQXdp62ABiy4Dp93r3K6" target="_blank" class="jupiter-btn">
+          <a href="https://jup.ag/swap/SOL-Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="jupiter-btn">
             🚀 Buy on Jupiter
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW MEME TOKEN SECTION -->
+  <section id="new-meme" class="new-meme-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">🚀 New Meme Token</h2>
+        <p class="section-subtitle">
+          Fresh off the press! Our latest meme token just launched on Pump.fun - join the revolution!
+        </p>
+      </div>
+      
+      <div class="new-token-grid">
+        <div class="new-token-info">
+          <div class="new-token-header">
+            <div class="new-token-icon">🎉</div>
+            <div>
+              <h3 class="new-token-title">NEW MEME TOKEN</h3>
+              <p class="new-token-status">🔴 LIVE on Pump.fun</p>
+            </div>
+          </div>
+          
+          <div class="new-token-address">
+            <label>Token Address:</label>
+            <div class="address-container">
+              <code id="newTokenAddress">Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump</code>
+              <button class="copy-btn-small" onclick="copyNewTokenAddress()">📋</button>
+            </div>
+          </div>
+          
+          <div class="new-token-stats">
+            <div class="stat-item">
+              <span class="stat-label">Network:</span>
+              <span class="stat-value">Solana</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Platform:</span>
+              <span class="stat-value">Pump.fun</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Launched:</span>
+              <span class="stat-value" id="launchTime">Just Now</span>
+            </div>
+          </div>
+          
+          <div class="new-token-links">
+            <a href="https://pump.fun/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="token-link primary">
+              🚀 Trade on Pump.fun
+            </a>
+            <a href="https://solscan.io/token/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="token-link">
+              🔍 View on Solscan
+            </a>
+            <a href="https://dexscreener.com/solana/Dq4sZigDntrDfxrdS26nXMwRHRoXpGHrCdmY26PLpump" target="_blank" class="token-link">
+              📊 Chart
+            </a>
+            <a href="meme_token_website.html" class="token-link">
+              🌐 Token Website
+            </a>
+          </div>
+        </div>
+        
+        <div class="new-token-features">
+          <h4>🎯 Token Features</h4>
+          <ul class="feature-list">
+            <li>✅ Just launched on Pump.fun</li>
+            <li>⚡ Lightning-fast Solana transactions</li>
+            <li>🔒 Secure and transparent</li>
+            <li>👥 Community-driven</li>
+            <li>🚀 High growth potential</li>
+            <li>💎 Early bird opportunity</li>
+          </ul>
+          
+          <div class="warning-box">
+            <div class="warning-icon">⚠️</div>
+            <div class="warning-text">
+              <strong>Investment Warning:</strong> This is a meme token for entertainment. 
+              Always DYOR (Do Your Own Research) before investing. Only invest what you can afford to lose.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -877,10 +1453,9 @@
     <div class="footer-content">
       <div class="social-links">
         <a href="https://x.com/KGPT_Official" target="_blank" class="social-link">🐦</a>
-        <a href="https://discord.gg/pZxpB8A4" target="_blank" class="social-link">💬</a>
-        <a href="https://t.me/KGPT_Official_Announcements" target="_blank" class="social-link" title="Telegram Announcements">📢</a>
-        <a href="https://t.me/KGPT_Community" target="_blank" class="social-link" title="Telegram Community">📱</a>
-<!--        <a href="https://github.com/kgpt-ai" target="_blank" class="social-link">💻</a> -->
+        <a href="https://discord.gg/kgpt" target="_blank" class="social-link">💬</a>
+        <a href="https://t.me/kgpt_community" target="_blank" class="social-link">📱</a>
+        <a href="https://github.com/kgpt-ai" target="_blank" class="social-link">💻</a>
       </div>
       <p class="footer-text">
         © 2025 K-GPT. A decentralized AI meme coin on Solana. 
@@ -890,6 +1465,30 @@
   </footer>
 
   <script>
+    // New token banner functionality
+    function closeBanner() {
+      const banner = document.querySelector('.new-token-banner');
+      const navbar = document.querySelector('.navbar');
+      const hero = document.querySelector('.hero');
+      
+      banner.style.transform = 'translateY(-100%)';
+      banner.style.opacity = '0';
+      
+      setTimeout(() => {
+        banner.style.display = 'none';
+        navbar.style.top = '0';
+        hero.style.paddingTop = '120px';
+      }, 300);
+    }
+    
+    // Auto-hide banner after 10 seconds
+    setTimeout(() => {
+      const banner = document.querySelector('.new-token-banner');
+      if (banner && banner.style.display !== 'none') {
+        closeBanner();
+      }
+    }, 10000);
+    
     // Copy contract address
     function copyAddress() {
       const address = document.getElementById('contractAddress').textContent.trim();
